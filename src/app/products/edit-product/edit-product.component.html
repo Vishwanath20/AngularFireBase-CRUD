@@ -1,0 +1,25 @@
+<h1>Edit-product</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        <form #postForm="ngForm" (ngSubmit)="update()">
+
+            <label > Product Name </label>
+            <input type="text" class="form-control" [(ngModel)]="productName" name="productName">
+            
+            <label > Product Category </label>
+            <input  class="form-control" [(ngModel)]="productCategory" name="productCategory">
+            
+            <label > Product Quantity </label>
+            <input class="form-control" [(ngModel)]="productQuantity" name="productQuantity">
+            
+            <label > Product Price </label>
+            <input class="form-control" [(ngModel)]="productPrice" name="productPrice">
+            
+            <button type="submit"  class="btn-success"> update </button> |
+            <button  class="btn-danger"> Cancel </button>
+        </form>
+        </div>
+    </div>
+</div>

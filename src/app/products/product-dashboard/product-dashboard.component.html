@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <button class="btn-primary" style="margin-left: 1%; margin-bottom: 1%;"  routerLink="/addproduct"> Add New products </button>  
+    </div>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price per Product </th> 
+            <th>Sum</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <thead>
+            <th colspan="6">
+				<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+			</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products | async ">
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCategory }}</td>
+            <td>{{ product.productQuantity }}</td>
+            <td>{{ product.id }}</td>
+            <td><img [src]="product.productImage || '//:0' " style="width: 50px; height: 50px;"></td>
+          
+            <td>
+                 <!-- Call to action buttons -->
+                 <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-0" type="button"  (click)="viewDetails(product)">Edit</button>
+                        <!-- routerLink="/editproduct"  (click)="viewDetails(product.id)"-->
+                      </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-0" type="button"  (click)="delete(product.id)">Delete</button>
+                    </li>
+                </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

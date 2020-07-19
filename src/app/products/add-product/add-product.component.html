@@ -1,0 +1,29 @@
+<h1>add-product</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        <form [formGroup]="productForm" (ngSubmit)="saveProduct(productForm.value)">
+            <label class="labelName"> Product Name </label>
+            <input class="form-control" formControlName="productName">
+            
+            <label class="labelName"> Product Category </label>
+            <input class="form-control" formControlName="productCategory">
+            
+            <label class="labelName"> Product Quantity </label>
+            <input class="form-control"  formControlName="productQuantity">
+            
+            <label class="labelName"> Product Price </label>
+            <input class="form-control" formControlName="productPrice">
+            
+            <input #resetMe type="file" accept="image/*" name="file" id="file" formControlName="productImage" (change)="uploadPostImage($event)"> 
+                    
+            <button type="submit" >Add product</button>
+           
+        </form>
+    </div>
+    </div>
+</div>
+
+
+
